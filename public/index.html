@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="dest"></div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $(document).click(loadRandom);
+        loadRandom();
+      });
+      var MIN = 1
+        , MAX = 66;
+      function loadRandom() {
+        var r = Math.floor(Math.random() * (MAX - MIN + 1) + MIN)
+          , path = '0' + ((r <= 9) ? '0' + r : r) + '.gif';
+        $('#dest').html('<img src="img/' + path + '"/>');
+      }
+    </script>
+  </body>
+</html>
